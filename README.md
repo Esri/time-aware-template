@@ -5,7 +5,7 @@ Time Aware is a configurable application template that enables you to display ti
 
 ![Screen Shot](https://dl.dropboxusercontent.com/u/24627279/screenshots/time_aware_th.jpg)
 
-[View it live](http://www.arcgis.com/apps/OnePane/azuretime/index.html?webmap=dfa1e187310c4c7a897e4c919dd3f781)
+[View it live](http://www.arcgis.com/apps/OnePane/azuretime/index.html?webmap=8a63712c19a8410082f3dc106118b7d1)
 
 
 #Features
