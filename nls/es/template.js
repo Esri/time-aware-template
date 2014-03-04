@@ -20,18 +20,13 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "aaaa G",
-      decadePattern: "yyyy", 
-      yearPattern: "MMMM aaaa",
-      weekPattern: "d\' de \'MMMM\' de \'yyyy",
+      datePattern: "MMMM d, yyyy",
+      yearPattern: "yyyy",
       hourTimePattern: "H",
-      // e.g. for German: "H:mm:ss:SSS"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H:mm",
-      // e.g. for German: "H:mm"
-      monthPattern: "MMMM d, a",
       secondTimePattern: "h:m:s.SSS a",
-      timeRange: "<b>Intervalo de tiempo:</b>de ${start_time} a ${end_time}",
+      millisecondTimePattern:"h:m:ss.SSS a",
+      timeRange: "De las ${start_time} a las ${end_time}",
       timeRangeSingle: "<b>Intervalo de tiempo:</b> ${time}"
     },
     legend: {

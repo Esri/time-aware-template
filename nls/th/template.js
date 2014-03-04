@@ -2,11 +2,11 @@
 ({
   viewer:{
     main:{
-      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "Unable to create map",
-      general: "Error"
+      createMap: "ไม่สามารถสร้างแผนที่ได้",
+      general: "ข้อผิดพลาด"
     }
   },
   tools:{
@@ -26,12 +26,12 @@
       minuteTimePattern: "h:mm a",
       secondTimePattern: "h:m:s.SSS a",
       millisecondTimePattern:"h:m:ss.SSS a",
-      timeRange: "${start_time} to ${end_time}",
-      timeRangeSingle: "<b>Time Range:</b> ${time}"
+      timeRange: "${start_time} ถึง ${end_time}",
+      timeRangeSingle: "<b>ช่วงเวลา:</b> ${time}"
     },
     legend: {
-      label: "Legend",
-      layerMessage: "No operational Layers"
+      label: "คำอธิบายสัญลักษณ์",
+      layerMessage: "ไม่มีชั้นข้อมูลที่ทำงานอยู่"
     }
   }
 })

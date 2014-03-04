@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>
 </title>
-<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.8/js/dojo/dijit/themes/tundra/tundra.css">
-<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.8/js/esri/css/esri.css" />
+<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/tundra/tundra.css">
+<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css" />
 <link rel="stylesheet" type="text/css" href="css/layout.css">
 <link rel="stylesheet" type="text/css" href="css/chromepopup.css">
 
@@ -25,12 +25,12 @@
       },
       {
        name: "templateConfig",
-        location: path_location
+        location: path_location 
       }
     ]
   };
 </script>
-<script type="text/javascript" src="//js.arcgis.com/3.8/">    
+<script type="text/javascript" src="//js.arcgis.com/3.9/">    
 </script>
 
 <script type="text/javascript">
@@ -42,6 +42,7 @@ dojo.require("esri.layout");
 </script>
 <script type="text/javascript">      
   dojo.require("utilities.app");
+  dojo.require("dojo.on");
   dojo.require("templateConfig.commonConfig");
 
 function init(){
@@ -57,18 +58,19 @@ var defaults = {
   //specify a proxy url if needed
   proxyurl:"",
  //Modify this to point to your sharing service URL if you are using the portal
-  sharingurl : "http://www.arcgis.com",
+  sharingurl : document.location.protocol + "//devext.arcgis.com",
   //add default template options. This includes the bing key, sharing url, proxy url, 
   //and any service urls (geometry, geocode, print) 
   //that may be needed by the template.
   bingmapskey: commonConfig.bingMapsKey,
   helperServices:commonConfig.helperServices    
 };
-
-  var app = new utilities.App(defaults);
-  app.init().then(function(options){
-    initMap(options);
+  var supportsLocalization = true;
+  var app = new utilities.App(defaults, supportsLocalization);
+  dojo.on(app, "ready", function(config){
+    initMap(config);
   });
+
 
 }
 //show map on load 
