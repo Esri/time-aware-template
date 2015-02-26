@@ -2,11 +2,11 @@
    ({
   viewer:{
     main:{
-      scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "Kan ikke opprette kart",
-      general: "Feil"
+      createMap: "Δεν είναι δυνατή η δημιουργία χάρτη",
+      general: "Σφάλμα"
     }
   },
   tools:{
@@ -20,18 +20,18 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d. MMMM yyyy",
+      datePattern: "d MMMM yyyy",
       yearPattern: "yyyy",
-      hourTimePattern: "H",
-      minuteTimePattern: "H.mm",
-      secondTimePattern: "t:m:s.SSS a",
+      hourTimePattern: "h",
+      minuteTimePattern: "hh:mm",
+      secondTimePattern: "hh:mm:ss",
       millisecondTimePattern:"h:m:ss.SSS a",
-      timeRange: "${start_time} til ${end_time}",
-      timeRangeSingle: "<b>Tidsområde:</b> ${time}"
+      timeRange: "${start_time} έως ${end_time}",
+      timeRangeSingle: "<b>Εύρος χρόνου:</b> ${time}"
     },
     legend: {
-      label: "Tegnforklaring",
-      layerMessage: "Ingen funksjonelle lag"
+      label: "Υπόμνημα",
+      layerMessage: "Δεν υπάρχουν επιχειρησιακά επίπεδα"
     }
   }
 })

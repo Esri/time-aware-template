@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   viewer:{
     main:{
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
@@ -30,7 +30,7 @@
       timeRangeSingle: "<b>Saat Aralığı:</b> ${time}"
     },
     legend: {
-      label: "Gösterge",
+      label: "Gösterim",
       layerMessage: "Hiçbir operasyonel katman yok"
     }
   }

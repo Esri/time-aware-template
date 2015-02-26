@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -31,7 +31,7 @@
     },
     legend: {
       label: "מקרא",
-      layerMessage: "אין שכבות אופרטיביות"
+      layerMessage: "אין שכבות תפעוליות"
     }
   }
 })

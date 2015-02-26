@@ -13,7 +13,7 @@
 
 
 
-     //read the legend header text from the localized strings file 
+     //read the legend header text from the localized strings file
      dojo.byId('legendHeader').innerHTML = configOptions.i18n.tools.legend.label;
 
      if (configOptions.bingMapsKey) {
@@ -30,6 +30,7 @@
              showAttribution: true,
              wrapAround180: true
          },
+         editable: false, 
          ignorePopups: false,
          bingMapsKey: configOptions.bingmapskey
      });
@@ -69,7 +70,7 @@
  function initUI(response) {
      //add chrome theme for popup
      dojo.addClass(map.infoWindow.domNode, "chrome");
-     //add the scalebar 
+     //add the scalebar
      var scalebar = new esri.dijit.Scalebar({
          map: map,
          scalebarUnit: configOptions.i18n.viewer.main.scaleBarUnits //metric or english
@@ -98,11 +99,12 @@
          map.setTimeExtent(fullTimeExtent);
          //create the slider
          timeSlider = new esri.dijit.TimeSlider({
-             style: "width: 100%;"
+             style: "width: 100%;",
+             loop: true
          }, dojo.byId("timeSliderDiv"));
 
          map.setTimeSlider(timeSlider);
-         //Set time slider properties 
+         //Set time slider properties
          timeSlider.setThumbCount(timeProperties.thumbCount);
          timeSlider.setThumbMovingRate(timeProperties.thumbMovingRate);
          //define the number of stops
@@ -123,6 +125,7 @@
      }
  }
 function updateTimeSliderTitle(timeExtent) {
+    console.log(this);
     var slider = this;
     var start = null,
         end = null;
