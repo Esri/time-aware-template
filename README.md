@@ -6,11 +6,12 @@ Time Aware is a configurable application template that enables you to display ti
 ![Screen Shot](https://dl.dropboxusercontent.com/u/24627279/screenshots/time.png)
 
 [View it live](http://www.arcgis.com/apps/Time/index.html?webmap=8a63712c19a8410082f3dc106118b7d1)
-
+#July 2015 Release Updates
+Template was re-worked at this release to have a simpler UI and be more configurable. You can now specify a color scheme, change time options and more. 
 
 #Features
 
-**Time Aware** is a configurable application template that enables you to display time enabled layers in an ArcGIS web map using a time slider. The template can be configured with the following option:
+**Time** is a configurable application template that enables you to display time enabled layers in an ArcGIS web map using a time slider. The template can be configured with the following option:
 
 - **Map:** Choose the web map used in the application. 
 
