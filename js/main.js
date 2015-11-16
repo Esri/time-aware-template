@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/on", "dojo/string", "dojo/date/locale", "dojo/dom-construct", "dojo/_base/array", "esri/arcgis/utils", "esri/lang", "esri/layers/FeatureLayer", "esri/TimeExtent", "esri/dijit/TimeSlider", "dojo/dom", "dojo/dom-class", "dojo/domReady!"], function (
-declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esriLang, FeatureLayer, TimeExtent, TimeSlider, dom, domClass) {
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dijit/registry", "dojo/on", "dojo/string", "dojo/date/locale", "dojo/dom-construct", "dojo/dom-style", "dojo/_base/array", "esri/arcgis/utils", "esri/lang", "esri/layers/FeatureLayer", "esri/TimeExtent", "esri/dijit/TimeSlider", "dojo/dom", "dojo/dom-class", "dojo/domReady!"], function (
+declare, lang, query, registry, on, string, locale, domConstruct, domStyle, array, arcgisUtils, esriLang, FeatureLayer, TimeExtent, TimeSlider, dom, domClass) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -76,8 +76,6 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                         domClass.remove(node, "toggle-grey");
                     });
                 });
-
-
             }));
         },
         _createWidgets: function () {
@@ -185,7 +183,8 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                     }));
                     var legendLayers = arcgisUtils.getLegendLayers(this.config.response);
                     if (legendLayers.length < 1) {
-                        domClass.add(legendContainer, "hide");
+                        domClass.add(legendContainer, "legend-hide");
+                        domStyle.set("legendContainer","display", "none");     
                         return;
                     }
                     var legend = new Legend({
@@ -195,10 +194,20 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
 
                     legend.startup();
                     dom.byId("legendButton").title = this.config.i18n.legend.title;
-                    domClass.add(legendContainer, "window-top-right");
+                    if(this.config.legendposition === "top-left"){
+                        domClass.add(legendContainer, "window-top-left");
+                        domClass.add("legendButton", "window-top-left");
+
+                    }else{ //default
+                        domClass.add("legendButton", "window-top-right");
+                        domClass.add(legendContainer, "window-top-right");
+                    }
+
 
                 }));
             } else {
+                domClass.add(dom.byId("legendContainer"), "legend-hide");
+                domStyle.set("legendContainer","display", "none");
                 domClass.add(dom.byId("legendContainer"), "hide");
                 domClass.add(dom.byId("legendButton"), "hide");
                 domClass.remove(dom.byId("legendButton"), "legendButtonDiv");
@@ -238,12 +247,18 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                     id: "search"
                 }, "mapDiv"));
 
-
                 search.startup();
-
+                
+                var positionClass = "window-top-right"
+                if(this.config.legendposition === "top-right"){
+                    positionClass = "window-top-right";
+                }else if(this.config.legendposition === "top-left"){
+                    positionClass = "window-top-left";
+                }
+                
+                domClass.add("search", positionClass);
 
             }));
-
         },
         _updateTheme: function () {
             if (this.config.panelbackground) {
@@ -267,6 +282,36 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             var play = dom.byId("playSlider");
             domClass.remove(play, remove);
             domClass.add(play, add);
+
+            // if loop is disabled and if 
+            // slider is at end reset if 
+            // play/pause button is pressed. 
+            if(!this.config.looptime){
+                var slider = registry.byId("timeSlider");
+                //get slider value 
+                var val = null;
+                if(lang.isArray(slider._slider.value)){
+                    val = slider._slider.value[1];
+                }else{
+                    val = slider._slider.value;
+                }
+            
+                if(val == slider._slider.maximum){
+                    slider.pause();
+                    if(slider.thumbCount > 1){
+                        slider.setThumbIndexes([0,1]);
+                    }else{
+                        slider.setThumbIndexes(0);
+                    }
+
+                    domClass.remove(play, "icon-pause");
+                    domClass.add(play, "icon-play");
+                }
+            }
+
+
+
+
         },
         _displayTime: function () {
             //position the time window 
@@ -280,11 +325,23 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 timeExtent = new TimeExtent(new Date(timeProperties.startTime), new Date(timeProperties.endTime));
             }
             if (timeProperties && timeExtent) {
+
                 //Add the time slider widget
-                var timeSlider = new TimeSlider({
-                    loop: this.config.looptime
-                }, "timeSliderDiv");
-                domClass.add(timeSlider.domNode, "templateTimeSlider");
+                var timeSlider;
+                if(this.config.clock !== null){
+                    timeSlider = new TimeSlider({
+                        loop: this.config.looptime
+                    });
+                    this._createClock();
+                }else{
+                    timeSlider = new TimeSlider({
+                        loop: this.config.looptime,
+                        id: "timeSlider"
+                    }, "timeSliderDiv");
+                    domClass.add(timeSlider.domNode, "templateTimeSlider");
+
+                }
+
                 this.map.setTimeExtent(timeExtent);
                 this.map.setTimeSlider(timeSlider);
 
@@ -298,6 +355,53 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 timeSlider.setThumbMovingRate(timeProperties.thumbMovingRate);
 
                 timeSlider.startup();
+
+                if(this.config.clock === null){
+                    var info = this._formatLabel(this.map.timeExtent);
+                    this._updateLabel(info);
+                }
+
+                if (this.config.sliderrate) {
+                    timeSlider.setThumbMovingRate(this.config.sliderrate);
+                }
+                if (this.config.autoplay) {
+                    timeSlider.play();
+                    this._updatePlayButton("icon-pause", "icon-play");
+                }
+                // If intermediate changes is true 
+                if(this.config.intermediatechanges){
+                    timeSlider._slider.set("intermediateChanges", true);
+                }
+
+                on(dom.byId("playSlider"), "click", lang.hitch(this, function () {
+                    var play = domClass.contains("playSlider", "icon-play");
+
+                    var removeClass = null,
+                        addClass = null;
+                    if (play) { //Switch to the pause icon and press play
+                        removeClass = "icon-play";
+                        addClass = "icon-pause";
+                        timeSlider.play();
+
+                    } else { //Switch to the play icon and press pause
+                        removeClass = "icon-pause";
+                        addClass = "icon-play";
+                        timeSlider.pause();
+                    }
+                    this._updatePlayButton(addClass, removeClass);
+
+                }));
+      
+                //Listen for time extent changes
+                on(timeSlider, "time-extent-change", lang.hitch(this, function (e) {
+                    if(this.config.clock !== null){
+                        this._updateClock(e);
+                    }else{
+                        var timeInfo = this._formatLabel(e);
+                        this._updateLabel(timeInfo);
+                    }
+                }));
+
                 //Hide the play controls if configured. 
                 if (this.config.noslider) {
                     //hide the play and slider controls
@@ -324,39 +428,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 if (!this.config.sliderticks) {
                     domClass.add(timeSlider.domNode, "noTicks");
                 }
-                if (this.config.sliderrate) {
-                    timeSlider.setThumbMovingRate(this.config.sliderrate);
-                }
-                if (this.config.autoplay) {
-                    timeSlider.play();
-                    this._updatePlayButton("icon-pause", "icon-play");
-                }
-                //Listen for time extent changes
-                var info = this._formatLabel(this.map.timeExtent);
-                this._updateLabel(info);
-
-                on(timeSlider, "time-extent-change", lang.hitch(this, function (e) {
-                    var timeInfo = this._formatLabel(e);
-                    this._updateLabel(timeInfo);
-                }));
-                on(dom.byId("playSlider"), "click", lang.hitch(this, function () {
-                    var play = domClass.contains("playSlider", "icon-play");
-
-                    var removeClass = null,
-                        addClass = null;
-                    if (play) { //Switch to the pause icon and press play
-                        removeClass = "icon-play";
-                        addClass = "icon-pause";
-                        timeSlider.play();
-
-                    } else { //Switch to the play icon and press pause
-                        removeClass = "icon-pause";
-                        addClass = "icon-play";
-                        timeSlider.pause();
-                    }
-                    this._updatePlayButton(addClass, removeClass);
-
-                }));
+  
             } else {
                 //hide play and slider controls and add message about no 
                 //time 
@@ -364,20 +436,48 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 domClass.remove(dom.byId("timeControls"), "controlCont");
                 domClass.add(dom.byId("playControls"), "hide");
                 domClass.add("timeContainer", "window-bottom-center");
-                dom.byId("timeLabel").innerHTML = this.config.i18n.time.enableTimeMessage;
+                var timeMessage = string.substitute(this.config.i18n.time.enableTimeMessage,{"link":"<a target='_blank' href='" + this.config.i18n.time.enableTimeMessageLink  +"'>" + this.config.i18n.time.enableTimeMessageLink + "</a>"});
+                dom.byId("timeLabel").innerHTML = timeMessage;
                 domClass.add(dom.byId("timeSliderDiv"), "error-text");
             }
             this._updateTheme();
         },
+        _createClock: function(){
+          //Add clock to time container
+            var clock = domConstruct.create("div",{
+                id: "clock"
+            },"timeLabel");
+            domClass.add(clock,["fg","bg"]);
+            domClass.add(dom.byId("timeContainer"),"digital");
+            domClass.add(dom.byId("timeContainer"), "noslider");
+        },
+        _updateClock: function(timeInfo){
+            var clock = dom.byId("clock");
+            var date = new Date(timeInfo.endTime || timeInfo.startTime);
+            var currTime = locale.format(date,{
+                timePattern: "h:m a",
+                selector: ('time')
+            });
+            var currDate = locale.format(date,{
+                datePattern: "MMMM dd, yyyy",
+                selector: ("date")
+            });
 
+            clock.innerHTML = currDate + "<br>" + currTime;
+        },
         _updateLabel: function (timeInfo) {
             //Update the time extent label for the time slider 
             var info;
             if (timeInfo.end) {
-                info = string.substitute(this.config.i18n.time.timeRange, {
-                    startTime: timeInfo.startTime,
-                    endTime: timeInfo.endTime
-                });
+                if(this.config.endtimenewline){
+                    info = timeInfo.startTime + "<br>" + timeInfo.endTime;
+                }else{
+                    info = string.substitute(this.config.i18n.time.timeRange, {
+                        startTime: timeInfo.startTime,
+                        endTime: timeInfo.endTime
+                    });
+                }
+      
             } else {
                 info = "" + timeInfo.startTime;
             }
@@ -400,6 +500,17 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             if (this.config.datetimeformat) {
                 startDatePattern = this.config.datetimeformat;
                 endDatePattern = this.config.datetimeformat;
+            }else if (this.config.dateformat || this.config.timeformat){
+                if(this.config.dateformat && this.config.timeformat){
+                    startDatePattern = this.config.dateformat + " " + this.config.timeformat;
+                    endDatePattern = this.config.dateformat + " " + this.config.timeformat;
+                }else if(this.config.dateformat){
+                    startDatePattern = this.config.dateformat;
+                    endDatePattern = this.config.dateformat;
+                }else if(this.config.timeformat){
+                    startDatePattern = this.config.timeformat;
+                    endDatePattern = this.config.timeformat;
+                }
             } else {
                 //calculate an appropriate start and end time pattern
                 if (end.toUTCString() === start.toUTCString()) {
@@ -447,7 +558,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                         startDatePattern = this.config.i18n.time.datePattern;
                         endDatePattern = this.config.i18n.time.datePattern;
                     }
-                } else if (end && end.getFullYear() - start.getFullYear() > 2) {
+                } else if (end && end.getFullYear() - start.getFullYear() > 10) {
                     startDatePattern = this.config.i18n.time.yearPattern;
                     endDatePattern = this.config.i18n.time.yearPattern;
                 } else {
@@ -457,20 +568,26 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
 
             }
 
-            var startTime = locale.format(start, {
-                datePattern: startDatePattern,
-                timePattern: startTimePattern,
-                selector: (startDatePattern && startTimePattern) ? null : (startDatePattern ? "date" : "time")
-            });
-            var endTime = null;
-            if (end) {
-                endTime = locale.format(end, {
-                    datePattern: endDatePattern,
-                    timePattern: endTimePattern,
-                    selector: (endDatePattern && endTimePattern) ? null : (endDatePattern ? "date" : "time")
+           try{
+                var startTime = locale.format(start, {
+                    datePattern: startDatePattern,
+                    timePattern: startTimePattern,
+                    selector: (startDatePattern && startTimePattern) ? null : (startDatePattern ? "date" : "time")
                 });
-            }
+           
 
+                var endTime = null;
+                if (end) {
+                    endTime = locale.format(end, {
+                        datePattern: endDatePattern,
+                        timePattern: endTimePattern,
+                        selector: (endDatePattern && endTimePattern) ? null : (endDatePattern ? "date" : "time")
+                    });
+        
+                }
+            }catch(err){
+                this.reportError(err);
+           }
             return {
                 startTime: startTime,
                 endTime: endTime,
@@ -494,7 +611,13 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             if (this.config.zoomslider === false) {
                 domClass.add(document.body, "nozoom");
             }
-
+            var sliderPosition = "top-left";
+            if(this.config.legendposition === "top-left"){
+                sliderPosition = "top-right";
+            }else if(this.config.legendposition === "top-right"){
+                sliderPosition = "top-left";
+            }
+            mapOptions.sliderPosition = sliderPosition;
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: mapOptions,
                 usePopupManager: true,
@@ -503,15 +626,18 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
+  
                 this.config.response = response;
                 // remove loading class from body
                 domClass.remove(document.body, "app-loading");
                 this._createWidgets();
+
                 if (this.config.time) {
                     this._displayTime();
                 } else {
                     domClass.add(dom.byId("timeContainer"), "hide");
                 }
+           
             }), this.reportError);
         },
         _setLevel: function (options) {

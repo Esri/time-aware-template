@@ -30,7 +30,8 @@ define(
       error: "Από προεπιλογή, θα χρησιμοποιηθεί η περιγραφή ή το τμήμα κώδικα του web χάρτη. Παραμετροποιήστε την εφαρμογή για να προσθέσετε ένα προσαρμοσμένο τμήμα κώδικα για το πλαίσιο πληροφοριών."
     },
     time: {
-        enableTimeMessage: "Ο καθορισμένος web χάρτης δεν περιλαμβάνει χωρο-χρονικά θεματικά επίπεδα. Για λεπτομέρειες, ανατρέξτε στο θέμα της βοήθειας <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'> Configure time settings </a>. Για να χρησιμοποιήσετε το πρότυπο χωρίς να εμφανίζεται ώρα, χρησιμοποιήστε το πλαίσιο παραμετροποίησης για να απενεργοποιήσετε την επιλογή της ώρας.",
+        enableTimeMessage: "Ο καθορισμένος web χάρτης δεν περιλαμβάνει χωρο-χρονικά θεματικά επίπεδα. Ανατρέξτε στο θέμα ${link} της βοήθειας για λεπτομέρειες. Για να χρησιμοποιήσετε το πρότυπο χωρίς να εμφανίζεται ώρα, χρησιμοποιήστε το πλαίσιο παραμετροποίησης για να απενεργοποιήσετε την επιλογή της ώρας.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "d MMMM yyyy",
         hourTimePattern: "h",
         millisecondTimePattern: "hh:mm:ss",

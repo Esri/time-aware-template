@@ -30,7 +30,8 @@ define(
       error: "Pagal numatytuosius nustatymus bus naudojamas internetinio žemėlapio aprašas arba fragmentas. Konfigūruokite aplikaciją, jei norite pridėti adaptuotą skydelio fragmentą."
     },
     time: {
-        enableTimeMessage: "Nurodytame internetiniame žemėlapyje nėra sluoksnių su laiko informacija. Daugiau informacijos žr. pagalbos temoje <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Laiko nustatymų konfigūravimas</a>. Jei norite, kad šablone nebūtų rodomas laikas, konfigūravimo skydelyje išjunkite laiko parinktį.",
+        enableTimeMessage: "Nurodytame internetiniame žemėlapyje nėra sluoksnių su laiko informacija. Rodyti ${link} žinyno temą su išsamia informacija. Jei norite, kad šablone nebūtų rodomas laikas, konfigūravimo skydelyje išjunkite laiko parinktį.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "yyyy MMMM dd",
         hourTimePattern: "H a",
         millisecondTimePattern: "HH:mm:ss",

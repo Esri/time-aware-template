@@ -30,7 +30,8 @@ define(
       error: "כברירת מחדל, המערכת תשתמש במקטע או בתיאור של מפת האינטרנט. התאם אישית את האפליקציה להוספת מקטע מותאם אישית עבור החלונית \'אודות\'."
     },
     time: {
-        enableTimeMessage: "מפת האינטרנט שצוינה אינה מכילה שכבות עם הגדרות זמן. לפרטים, הצג את נושא העזרה <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>הגדרת הגדרות זמן</a>. השתמש בתבנית מבלי להציג זמן. השתמש בחלונית הקונפיגורציה כדי להשבית את אפשרות הזמן.",
+        enableTimeMessage: "web map שצוינה אינה מכילה שכבות בעלת הגדרת זמן מופעל. הצג את נושא העזרה ${link} לקבלת פרטים. כדי להשתמש בתבנית מבלי להציג את הגדרת הזמן, השתמש בחלונית התצורה כדי להפוך את אפשרות הזמן ללא פעילה.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "d, MMMM ,yyyy",
         hourTimePattern: "h a",
         millisecondTimePattern: "h:mm:ss a",

@@ -30,8 +30,9 @@ define(
       error: "Por omissão a descrição do mapa web ou trecho será usado. Configurar a aplicação a adicionar a um trecho personalizado acerca do painel."
     },
     time: {
-        enableTimeMessage: "O mapa web especificado não contem qualquer das camadas de tempo activadas. Ver o tópico de ajuda <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Configurar definições de tempo</a> para mais detalhes. Para usar o modelo sem exibir tempo use o painel de configuração para desactivar a opção tempo.",
-        datePattern: "d\\' de \\'MMMM\\' de \\'yyyy",
+        enableTimeMessage: "O mapa web especificado não contém quaisquer camadas com componente temporal ativo. Veja o tópico de ajuda de ${link} para obter detalhes.  Para utilizar o modelo sem exibir tempo, utilize o painel de configuração para desativar a opção tempo.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
+        datePattern: "d\' de \'MMMM\' de \'yyyy",
         hourTimePattern: "H",
         millisecondTimePattern: "H:mm:ss",
         minuteTimePattern: "H:mm",

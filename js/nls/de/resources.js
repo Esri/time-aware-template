@@ -27,10 +27,11 @@ define(
     },
     about: {
       title: "Informationen zu",
-      error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für das Fenster \"Info\" hinzuzufügen."
+      error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
     },
     time: {
-        enableTimeMessage: "Die angegebene Webkarte enthält keine Layer mit aktivierten Zeiteigenschaften. Weitere Informationen finden Sie im Hilfethema <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurieren von Zeiteinstellungen</a>. Um die Vorlage ohne Zeitanzeige zu verwenden, deaktivieren Sie die Zeitoption im Fenster \"Konfiguration\".",
+        enableTimeMessage: "Die angegebene Webkarte enthält keine Layer mit aktivierten Zeiteigenschaften. Einzelheiten finden Sie im Hilfethema ${link}. Um die Vorlage ohne Zeitanzeige zu verwenden, deaktivieren Sie die Zeitoption im Bereich \"Konfiguration\".",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "d. MMMM yyyy",
         hourTimePattern: "H",
         millisecondTimePattern: "H:mm:ss",

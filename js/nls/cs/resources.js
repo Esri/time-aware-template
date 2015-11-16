@@ -30,7 +30,8 @@ define(
       error: "Ve výchozím nastavení se použije popis nebo fragment webové mapy. Vlastní fragment pro panel informací přidáte prostřednictvím konfigurace aplikace."
     },
     time: {
-        enableTimeMessage: "Zadaná webová mapa neobsahuje žádné vrstvy s časovými daty. Podrobnosti naleznete v tématu nápovědy <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurace nastavení času</a>. Chcete-li šablonu použít bez zobrazení času, vypněte v konfiguračním panelu možnost času.",
+        enableTimeMessage: "Určená webová mapa neobsahuje žádné vrstvy s časovými daty. Podrobnosti najdete v tématu nápovědy ${link}. Chcete-li šablonu použít bez zobrazení času, vypněte v konfiguračním panelu možnost času.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "MMMM d, yyyy",
         hourTimePattern: "H",
         millisecondTimePattern: "H:mm:ss",

@@ -30,7 +30,8 @@ define(
       error: "Per impostazione predefinita, verrà utilizzato un frammento o la descrizione della mappa Web. Configurare l\'app per aggiungere un frammento personalizzato per il pannello Informazioni."
     },
     time: {
-        enableTimeMessage: "La mappa Web specificata non contiene layer abilitati per variazioni temporali. Per ulteriori informazioni, vedere l\'argomento della Guida <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Configurare le impostazioni temporali</a>. Per utilizzare il modello senza visualizzare l\'ora, utilizzare il pannello di configurazione per disabilitare l\'opzione dell\'ora.",
+        enableTimeMessage: "La mappa Web specificata non contiene layer abilitati per l\'ora. Per informazioni dettagliate, visualizzare l\'argomento della Guida ${link}. Per utilizzare il modello senza visualizzare l\'ora, utilizzare il riquadro di configurazione per disabilitare l\'opzione dell\'ora.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "d MMMM yyyy",
         hourTimePattern: "H",
         millisecondTimePattern: "H.mm.ss",
