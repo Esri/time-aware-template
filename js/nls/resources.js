@@ -19,7 +19,7 @@ define({
     map: {
       error: "Unable to create map"
     },
-    legend:{
+    legend: {
       title: "Legend"
     },
     share: {
@@ -30,17 +30,10 @@ define({
       error: "By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel."
     },
     time: {
-        enableTimeMessage: "The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option.",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "MMMM d, yyyy",
-        hourTimePattern: "h a",
-        millisecondTimePattern: "h:mm:ss a",
-        minuteTimePattern: "h:mm a",
-        secondTimePattern: "h:mm:ss a",
-        timeRange: "${startTime} to ${endTime}",
-        yearPattern: "yyyy"
+      enableTimeMessage: "The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option.",
+      enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
     },
-    histogram:{
+    histogram: {
       error: "No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option."
     }
   }),
@@ -54,6 +47,7 @@ define({
   "fi": 1,
   "fr": 1,
   "he": 1,
+  "hr": 1, 
   "it": 1,
   "ja": 1,
   "ko": 1,
@@ -66,11 +60,12 @@ define({
   "pt-pt": 1,
   "ro": 1,
   "ru": 1,
+  "sr": 1,
   "sv": 1,
-  "tr": 1,
   "th": 1,
+  "tr": 1,
   "vi": 1,
   "zh-cn": 1,
-  "zh-hk": 1,
-  "zh-tw": 1
+  "zh-hk": 1, 
+  "zh-tw": 1 
 });

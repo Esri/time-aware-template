@@ -16,23 +16,23 @@
  */
 define({
   "map": {
-    "error": "Impossible de créer la carte"
+    "error": "Kreiranje mape nije moguće"
   },
   "legend": {
-    "title": "Légende"
+    "title": "Legenda"
   },
   "share": {
-    "title": "Partager"
+    "title": "Podeli"
   },
   "about": {
-    "title": "À propos de",
-    "error": "Par défaut, la description de la carte Web ou l'extrait est utilisé. Configurez l'application afin d'ajouter un extrait personnalisé pour le volet A propos."
+    "title": "Više informacija",
+    "error": "Podrazumevano, biće korišćen opis ili isečak veb mape. Konfigurišite aplikaciju da biste dodali prilagođeni isečak za tablu „više informacija“."
   },
   "time": {
-    "enableTimeMessage": "La carte Web spécifiée ne contient aucune couche temporelle. Reportez-vous à la rubrique d'aide ${link} pour en savoir plus. Pour utiliser le modèle sans afficher les données temporelles, utilisez le panneau de configuration afin de désactiver l'option temporelle.",
+    "enableTimeMessage": "Navedena veb mapa ne sadrži uvek dostupne slojeve. Pogledajte temu pomoći ${link} za više detalja. Da koristite šablon bez prikazivanja vremena upotrebe, koristite tablu za konfiguraciju da onemogućite opciju vremena.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
-    "error": "Aucune couche d'entités temporelles, en mode de capture instantanée, n'est disponible dans la carte Web. Configurez l'application de façon à utiliser une autre carte Web ou désactivez l'option d'histogramme."
+    "error": "Nema dostupnih slojeva sa omogućenom funkcijom vremena u veb mapi u režimu snimka. Konfigurišite aplikaciju da koristite drugu veb mapu ili onemogućite opciju histograma."
   }
 });

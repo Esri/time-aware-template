@@ -14,16 +14,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name = "viewport" content = "initial-scale = 1.0">
   <!-- End Responsive -->
-  <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-  <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="//js.arcgis.com/3.16/dijit/themes/claro/claro.css">
-  <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/css/esri.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.18/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.18/esri/css/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/dialogs.css">
 </head>
 
-<body class="claro app-loading">
+<body class="calcite app-loading">
   <div class="loading-indicator">
     <div class="loading-message" id="loading_message"></div>
   </div>
@@ -90,14 +88,16 @@
             }, {
         name: "arcgis_templates",
         location: package_path + '/..'
-            }]
+      }]
     };
     // Have to handle a locale parameter before dojo is loaded
       if (location.search.match(/locale=([\w\-]+)/)) {
           dojoConfig.locale = RegExp.$1;
       }
   </script>
-  <script type="text/javascript" src="//js.arcgis.com/3.16/"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script type="text/javascript" src="js/twix.min.js"></script>
+  <script type="text/javascript" src="//js.arcgis.com/3.18"></script>
   <script type="text/javascript">
     require([
             "config/templateConfig",

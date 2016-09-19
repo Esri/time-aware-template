@@ -16,23 +16,23 @@
  */
 define({
   "map": {
-    "error": "Impossible de créer la carte"
+    "error": "Nije moguće stvoriti kartu"
   },
   "legend": {
-    "title": "Légende"
+    "title": "Legenda"
   },
   "share": {
-    "title": "Partager"
+    "title": "Podijeli"
   },
   "about": {
-    "title": "À propos de",
-    "error": "Par défaut, la description de la carte Web ou l'extrait est utilisé. Configurez l'application afin d'ajouter un extrait personnalisé pour le volet A propos."
+    "title": "Informacije",
+    "error": "Prema zadanim postavkama upotrijebit će se opis web-karte ili isječak. Konfigurirajte app za dodavanje prilagođenog isječka za ploču s informacijama."
   },
   "time": {
-    "enableTimeMessage": "La carte Web spécifiée ne contient aucune couche temporelle. Reportez-vous à la rubrique d'aide ${link} pour en savoir plus. Pour utiliser le modèle sans afficher les données temporelles, utilisez le panneau de configuration afin de désactiver l'option temporelle.",
+    "enableTimeMessage": "Naznačena web-karta ne sadrži slojeve s omogućenim praćenjem vremena. Pojedinosti potražite na dijelu za pomoć ${link}. Za upotrebu predloška bez prikaza vremena upotrijebite ploču za konfiguraciju da biste isključili opciju prikaza vremena.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
-    "error": "Aucune couche d'entités temporelles, en mode de capture instantanée, n'est disponible dans la carte Web. Configurez l'application de façon à utiliser une autre carte Web ou désactivez l'option d'histogramme."
+    "error": "Slojevi s omogućenim praćenjem vremena u načinu snimke nisu dostupni u web-karti. Konfigurirajte app za upotrebu druge web-karte ili onemogućite opciju histograma."
   }
 });
