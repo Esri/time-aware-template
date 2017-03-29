@@ -29,6 +29,10 @@ define({
     "error": "Varsayılan olarak web haritası açıklaması veya kod parçacığı kullanılacak. Uygulamayı hakkında panosuna özel bir kod parçacığı ekleyecek biçimde yapılandırın."
   },
   "time": {
+    "playback": "Oynatma hızı",
+    "play": "Oynat",
+    "pause": "Duraklat",
+    "timeSpeed": "Hızı değiştir",
     "enableTimeMessage": "Belirtilen web haritası etkin zaman katmanı bulundurmuyor. Ayrıntılar için ${link} yardım başlığını görüntüleyin. Şablonu zamanı görüntülemeden kullanmak için yapılandırma panelini kullanarak zaman seçeneğini devre dışı bırakın.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

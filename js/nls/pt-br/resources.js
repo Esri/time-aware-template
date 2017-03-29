@@ -29,6 +29,10 @@ define({
     "error": "Por padrão a descrição de mapa da web ou snippet será utilizada. Configure o aplicativo para adicionar um snippet personalizado para o painel Sobre."
   },
   "time": {
+    "playback": "Velocidade de reprodução",
+    "play": "Reproduzir",
+    "pause": "Pausar",
+    "timeSpeed": "Alterar velocidade",
     "enableTimeMessage": "O mapa da web especificado não contém quaisquer camadas habilitadas para tempo. Visualize o tópico de ajuda ${link} para detalhes. Para utilizar o modelo sem exibir o tempo, utilize o painel de configuração para desabilitar a opção de tempo.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

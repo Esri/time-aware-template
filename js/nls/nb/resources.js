@@ -29,6 +29,10 @@ define({
     "error": "Som standard brukes webkartbeskrivelsen eller snutten. Konfigurer appen slik at det legges til en egendefinert snutt om panelet."
   },
   "time": {
+    "playback": "Avspillingshastighet",
+    "play": "Spill av",
+    "pause": "Pause",
+    "timeSpeed": "Endre hastighet",
     "enableTimeMessage": "Det angitte webkartet inneholder ikke noen tidsaktiverte lag. Vis hjelpeemnet ${link} hvis du vil ha flere opplysninger. Hvis du vil bruke malen uten å vise tid, bruker du konfigurasjonspanelet til å deaktivere tidsalternativet.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

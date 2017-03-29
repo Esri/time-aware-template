@@ -38,15 +38,15 @@ body,html {
 /*Map Navigation Widgets (zoom slider, search, home)*/
 #logo {
     float: left;
-    width: 44px;
-    height: 44px;
+    width: auto;
+    max-height: 44px;
 }
 
 #logo img {
     vertical-align: middle;
     line-height: 44px;
-    width: 44px;
-    height: 44px;
+    width: auto;
+    max-height: 44px;
 }
 
 #logo a {
@@ -63,12 +63,12 @@ body,html {
     z-index: 40;
 }
 #search.window-top-right{
-    top: 95px;
-    left:20px;
+    top: 98px;
+    left:15px;
 }
 #search.window-top-left{
-    top:95px;
-    right:20px;
+    top:98px;
+    right:15px;
 }
 .arcgisSearch .searchCollapsed .searchSubmit{
     border-radius: 1px;
@@ -96,7 +96,7 @@ body,html {
     border-radius: 0;
 }
 .showtitle #search.window-top-left, .showtitle #search.window-top-right{
-    top: 115px;
+    top: 118px;
 }
 .nozoom #search.window-top-left{
   left:initial !important;
@@ -149,6 +149,11 @@ body,html {
     text-align: center;
     height:30px;
     line-height: 30px;
+}
+#aboutBtn, #shareBtn{
+    background: transparent;
+    border:none;
+    color:inherit;
 }
 .menuDiv {
     cursor: pointer;
@@ -306,21 +311,23 @@ body,html {
 }
 /*Play/Pause Button*/
 #playControls {
-    width: 40px;
+    width: 60px;
     border-right: none;
     border-color: inherit;
     text-shadow: 0px 1px 2px rgba(128,128,128,.5);
+    margin:0;
+    padding:0;
+}
+#playSlider, #prevSlider, #nextSlider{
+    font-size: 16px;
 }
 #playControls.nonav{
   width:20px;
 }
 #playSlider {
     width: auto;
-    font-size: 18px;
 }
-#prevSlider, #nextSlider {
-    font-size: 16px;
-}
+
 #sliderDisabled {
     color: #dddddd;
 }
@@ -328,6 +335,8 @@ body,html {
     display: none;
 }
 #playSlider, #prevSlider, #nextSlider {
+    background:transparent;
+    border:none;
     vertical-align: middle;
     text-align: center;
 }
@@ -359,14 +368,15 @@ body,html {
     padding-top: 4px;
     padding-bottom: 16px;
 }
-.esriLegendServiceLabel {
+.calcite .esriLegendServiceLabel {
     display: block;
+    color:inherit;
     font-weight: bold;
     position: relative;
     width: 100%;
 }
-.esriLegendLayerLabel {
-    color: #8d94a1;
+.calcite .esriLegendLayerLabel {
+    color: inherit;
     padding-left: 8px;
 }
 .esriLegendLayer {
@@ -673,4 +683,36 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
     content: "\2713";
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     font-size: 15px;
+}
+
+.time-speed-container.hide{
+    height:0;
+    display: none;
+}
+
+.time-speed-container > .dijitDropDownButton{
+    float:right;
+    background:transparent;
+    padding:0;
+    margin:0;
+}
+#timeSpeedContainer > span > span:hover{
+    color:inherit;  
+}
+#timeSpeedContainer > span > span{
+    background:transparent;
+    border-color:transparent;
+    background-color: transparent;
+    color:inherit;
+    padding:0;
+    margin:0;
+    line-height: normal;
+}
+#rateButton_label{
+    line-height: normal;
+    font-size: 12px;
+}
+#rateButton > span.dijitReset.dijitInline.dijitArrowButtonInner{
+    margin:0;
+    padding:0 2px;
 }

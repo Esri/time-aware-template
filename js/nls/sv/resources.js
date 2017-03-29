@@ -29,6 +29,10 @@ define({
     "error": "Som standard används webbkartbeskrivningen eller snippet. Konfigurera appen för att lägga till en anpassad snippet för panelen Om."
   },
   "time": {
+    "playback": "Uppspelningshastighet",
+    "play": "Spela",
+    "pause": "Paus",
+    "timeSpeed": "Ändra hastighet",
     "enableTimeMessage": "Den angivna webbkartan innehåller inga tidsaktiverade lager. Se ${link} hjälpavsnittet för mer information. Om du vill använda mallen utan att visa tid använder du konfigurationspanelen för att inaktivera tidsalternativet.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

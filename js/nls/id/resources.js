@@ -29,6 +29,10 @@ define({
     "error": "Secara default, deskripsi atau potongan kecil dari web map yang akan digunakan. Konfigurasikan aplikasi untuk menampilkan potongan kecil tersebut dalam panel 'tentang'."
   },
   "time": {
+    "playback": "Kecepatan putar ulang",
+    "play": "Putar",
+    "pause": "Jeda",
+    "timeSpeed": "Ubah kecepatan",
     "enableTimeMessage": "Web map yang ditentukan tidak berisi layer yang diaktifkan waktu. Tampilkan topik bantuan ${link} untuk mendapatkan detailnya. Untuk menggunakan template tanpa menampilkan waktu, gunakan panel konfigurasi untuk menonaktifkan opsi waktu.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

@@ -29,6 +29,10 @@ define({
     "error": "Domyślnie użyty zostanie opis mapy internetowej lub ekstrakt. Skonfiguruj aplikację, aby dodać niestandardowy ekstrakt do panelu informacji o aplikacji."
   },
   "time": {
+    "playback": "Playback speed",
+    "play": "Odtwórz",
+    "pause": "Wstrzymaj",
+    "timeSpeed": "Zmień prędkość",
     "enableTimeMessage": "Wybrana mapa internetowa nie zawiera żadnych warstw czasowych. Kliknij temat pomocy ${link}, aby dowiedzieć się więcej. Aby używać szablonu bez wyświetlania czasu, należy wyłączyć opcję pokazywania czasu w panelu konfiguracyjnym.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

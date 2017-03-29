@@ -29,6 +29,10 @@ define({
     "error": "Pēc noklusējuma tiks izmantots tīmekļa kartes apraksts vai atgriezums. Konfigurējiet lietotni, lai pievienotu pielāgotu atgriezumu apkārtējam panelim."
   },
   "time": {
+    "playback": "Atskaņošanas ātrums",
+    "play": "Atskaņot",
+    "pause": "Pauzēt",
+    "timeSpeed": "Mainīt ātrumu",
     "enableTimeMessage": "Norādītā tīmekļa karte nesatur nevienu slāni ar iespējotu laiku. Detalizētu informāciju skatiet ${link} palīdzības tēmā. Lai izmantotu veidni, neparādot laiku, izmantojiet konfigurācijas paneli, lai atspējotu laika opciju.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

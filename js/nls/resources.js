@@ -30,6 +30,10 @@ define({
       error: "By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel."
     },
     time: {
+      playback: "Playback speed",
+      play: "Play",
+      pause: "Pause",
+      timeSpeed: "Change speed",
       enableTimeMessage: "The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option.",
       enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
     },
@@ -48,7 +52,8 @@ define({
   "fi": 1,
   "fr": 1,
   "he": 1,
-  "hr": 1, 
+  "hi": 1,
+  "hr": 1,
   "id": 1,
   "it": 1,
   "ja": 1,
@@ -68,6 +73,6 @@ define({
   "tr": 1,
   "vi": 1,
   "zh-cn": 1,
-  "zh-hk": 1, 
-  "zh-tw": 1 
+  "zh-hk": 1,
+  "zh-tw": 1
 });

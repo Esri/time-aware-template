@@ -29,6 +29,10 @@ define({
     "error": "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
   },
   "time": {
+    "playback": "Wiedergabegeschwindigkeit",
+    "play": "Wiedergeben",
+    "pause": "Unterbrechen",
+    "timeSpeed": "Geschwindigkeit ändern",
     "enableTimeMessage": "Die angegebene Webkarte enthält keine Layer mit aktivierten Zeiteigenschaften. Einzelheiten finden Sie im Hilfethema ${link}. Um die Vorlage ohne Zeitanzeige zu verwenden, deaktivieren Sie die Zeitoption im Bereich \"Konfiguration\".",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

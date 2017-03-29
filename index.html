@@ -12,10 +12,10 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name = "viewport" content = "initial-scale = 1.0">
+  <meta name="viewport" content="initial-scale = 1.0">
   <!-- End Responsive -->
-  <link rel="stylesheet" href="//jsdev.arcgis.com/3.19/esri/themes/calcite/dijit/calcite.css">
-  <link rel="stylesheet" href="//jsdev.arcgis.com/3.19/esri/css/esri.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.20/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.20/esri/themes/calcite/esri/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/dialogs.css">
@@ -32,22 +32,22 @@
         <div id="logo" class="hide"></div>
         <div id="title" class="app-title"></div>
         <div class="top-menu-right">
-           <div id="aboutDiv" class="menuDiv hide">
-            <div  role="presentation" id="aboutDialog" >
-                <div id="aboutBtn" class="button-container">
-                  <div class="icon-info menuIcon"></div>
-                  <div id="aboutLabel" class="iconLabel aboutLabel"></div>
-                </div>
+          <div id="aboutDiv" class="menuDiv hide">
+            <div role="presentation" id="aboutDialog">
+              <button id="aboutBtn" class="button-container">
+                <div class="icon-info menuIcon"></div>
+                <div id="aboutLabel" class="iconLabel aboutLabel"></div>
+              </button>
             </div>
           </div>
-        <div id="shareDiv" class="menuDiv hide" >
-          <div  role="presentation" id="shareDialog">
-            <div id="shareBtn" class="button-container">
+          <div id="shareDiv" class="menuDiv hide">
+            <div role="presentation" id="shareDialog">
+              <button id="shareBtn" class="button-container">
                 <div class="icon-share menuIcon"></div>
                 <div id="shareLabel" class="iconLabel shareLabel"></div>
-              </div>
+              </button>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -56,19 +56,23 @@
       <div id="legendDiv"></div>
     </div>
 
-     <div id="timeContainer" class="timeInfo bg fg">
+    <div id="timeContainer" class="timeInfo bg fg">
       <div id="timeControls" class="controlCont wrapper">
         <div class="main">
-        <div id="playControls" class="box">
-          <div id="prevSlider" class="hide icon-previous tc timenav"></div>
-          <div id="playSlider" class="icon-play tc"></div>
-          <div id="nextSlider" class="hide icon-next tc timenav"></div>
+          <div id="playControls" class="box">
+            <button id="prevSlider" class="hide esri-icon-reverse tc timenav"></button>
+            <button id="playSlider" class="esri-icon-play tc"></button>
+            <button id="nextSlider" class="hide esri-icon-forward tc timenav"></button>
+          </div>
+          <div id="timeLabel" class="box"></div>
         </div>
-        <div id="timeLabel" class="box" ></div>
-      </div>
         <div id="sliderContainer" class="footer">
           <div id="timeSliderDiv" class="tc"></div>
         </div>
+        <!-- <div class="time-speed-container"> <button id="timeSpeed" class="time-speed tc hide"><span class="speed-label" id="speedText"></span></button></div>-->
+        <div id="timeSpeedContainer" class="time-speed-container hide tc">
+        </div>
+
       </div>
     </div>
 
@@ -84,47 +88,50 @@
       packages: [{
         name: "application",
         location: package_path + '/js'
-            }, {
+      }, {
         name: "config",
         location: package_path + '/config'
-            }, {
+      }, {
         name: "arcgis_templates",
         location: package_path + '/..'
       }]
     };
     // Have to handle a locale parameter before dojo is loaded
-      if (location.search.match(/locale=([\w\-]+)/)) {
-          dojoConfig.locale = RegExp.$1;
-      }
+    if (location.search.match(/locale=([\w\-]+)/)) {
+      dojoConfig.locale = RegExp.$1;
+    }
   </script>
   <script type="text/javascript" src="js/moment.min.js"></script>
   <script type="text/javascript" src="js/twix.min.js"></script>
-  <script type="text/javascript" src="//jsdev.arcgis.com/3.19"></script>
+  <script type="text/javascript" src="//js.arcgis.com/3.20"></script>
   <script type="text/javascript">
     require([
-            "config/templateConfig",
-            "application/template",
-            "application/main"
-        ], function (
+      "dojo/parser",
+      "config/templateConfig",
+      "application/template",
+      "application/main"
+    ], function (
+      parser,
       templateConfig,
       Template,
       Main
     ) {
-      // create the template. This will take care of all the logic required for template applications
-      var myTemplate = new Template(templateConfig);
-      // create my main application. Start placing your logic in the main.js file.
-      var myApp = new Main();
-      // start template
-      myTemplate.startup().then(function (config) {
-        // The config object contains the following properties: helper services, (optionally)
-        // i18n, appid, webmap and any custom values defined by the application.
-        // In this example we have one called theme.
-        myApp.startup(config);
-      }, function (error) {
-        // something went wrong. Let's report it.
-        myApp.reportError(error);
+        parser.parse();
+        // create the template. This will take care of all the logic required for template applications
+        var myTemplate = new Template(templateConfig);
+        // create my main application. Start placing your logic in the main.js file.
+        var myApp = new Main();
+        // start template
+        myTemplate.startup().then(function (config) {
+          // The config object contains the following properties: helper services, (optionally)
+          // i18n, appid, webmap and any custom values defined by the application.
+          // In this example we have one called theme.
+          myApp.startup(config);
+        }, function (error) {
+          // something went wrong. Let's report it.
+          myApp.reportError(error);
+        });
       });
-    });
   </script>
 </body>
 

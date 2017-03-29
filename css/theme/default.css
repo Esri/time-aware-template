@@ -21,7 +21,11 @@
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  margin:0;
+  padding:0;
+
 }
+
 .sidebar {
   width: 100px;
 }
@@ -29,8 +33,15 @@
   display: table-row;
   height: 1px;
 }
+
 #timeLabel{
   margin:.5em auto;
+}
+.esriTimeSlider .ts{
+  margin: 0.7em;
+}
+#timeSlider.esriTimeSlider.templateTimeSlider{
+  padding-top:0.5em;
 }
 .calcite .dijitSliderBarH, .calcite .dijitSliderBumperH {
     border-radius: 5px;

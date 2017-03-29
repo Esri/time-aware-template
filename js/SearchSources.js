@@ -135,7 +135,6 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
             source.searchFields = [searchLayer.field.name];
             source.displayField = searchLayer.field.name;
             source.outFields = ["*"];
-
             source.placeholder = searchOptions.hintText;
             this.sources.push(source);
           }
@@ -152,6 +151,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
           var featureLayer = null;
           if (source.flayerId) {
             featureLayer = this.map.getLayer(source.flayerId);
+            if (featureLayer && featureLayer.type !== "Feature Layer") {
+              featureLayer = null;
+            }
           }
           if (!featureLayer && source.url) {
             featureLayer = new FeatureLayer(source.url, {
@@ -165,7 +167,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
             }
           }
           source.featureLayer = featureLayer;
-          source.infoTemplate = source.featureLayer.infoTemplate;
+          if (source.featureLayer && source.featureLayer.infoTemplate) {
+            source.infoTemplate = source.featureLayer.infoTemplate;
+          }
         }
         if (source.searchWithinMap) {
           source.searchExtent = this.map.extent;

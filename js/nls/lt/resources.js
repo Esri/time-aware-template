@@ -29,6 +29,10 @@ define({
     "error": "Pagal numatytuosius nustatymus bus naudojamas internetinio žemėlapio aprašas arba fragmentas. Konfigūruokite aplikaciją, jei norite pridėti adaptuotą skydelio fragmentą."
   },
   "time": {
+    "playback": "Peržiūros greitis",
+    "play": "Leisti",
+    "pause": "Pristabdyti",
+    "timeSpeed": "Keisti greitį",
     "enableTimeMessage": "Nurodytame internetiniame žemėlapyje nėra sluoksnių su laiko informacija. Rodyti ${link} žinyno temą su išsamia informacija. Jei norite, kad šablone nebūtų rodomas laikas, konfigūravimo skydelyje išjunkite laiko parinktį.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

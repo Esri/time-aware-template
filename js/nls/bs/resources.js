@@ -29,6 +29,10 @@ define({
     "error": "Prema zadanim postavkama upotrijebit će se opis web-karte ili isječak. Konfigurirajte app za dodavanje prilagođenog isječka za ploču s informacijama."
   },
   "time": {
+    "playback": "Brzina reprodukcije",
+    "play": "Reproduciraj",
+    "pause": "Pauza",
+    "timeSpeed": "Promijeni brzinu",
     "enableTimeMessage": "Naznačena web-karta ne sadrži slojeve s omogućenim praćenjem vremena. Pojedinosti potražite na dijelu za pomoć ${link}. Za upotrebu predloška bez prikaza vremena upotrijebite ploču za konfiguraciju da biste isključili opciju prikaza vremena.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

@@ -29,6 +29,10 @@ define({
     "error": "Por omissão a descrição do mapa web ou trecho será usado. Configurar a aplicação a adicionar a um trecho personalizado acerca do painel."
   },
   "time": {
+    "playback": "Velocidade de reprodução",
+    "play": "Reproduzir",
+    "pause": "Pausa",
+    "timeSpeed": "Alterar velocidade",
     "enableTimeMessage": "O mapa web especificado não contém quaisquer camadas com componente temporal ativo. Veja o tópico de ajuda de ${link} para obter detalhes.  Para utilizar o modelo sem exibir tempo, utilize o painel de configuração para desativar a opção tempo.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

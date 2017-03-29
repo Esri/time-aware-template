@@ -29,6 +29,10 @@ define({
     "error": "Podrazumevano, biće korišćen opis ili isečak veb mape. Konfigurišite aplikaciju da biste dodali prilagođeni isečak za tablu „više informacija“."
   },
   "time": {
+    "playback": "Brzina reprodukovanja",
+    "play": "Reprodukuj",
+    "pause": "Pauziraj",
+    "timeSpeed": "Promeni brzinu",
     "enableTimeMessage": "Navedena veb mapa ne sadrži uvek dostupne slojeve. Pogledajte temu pomoći ${link} za više detalja. Da koristite šablon bez prikazivanja vremena upotrebe, koristite tablu za konfiguraciju da onemogućite opciju vremena.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

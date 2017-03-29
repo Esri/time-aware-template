@@ -29,6 +29,10 @@ define({
     "error": "În mod implicit, este utilizată descrierea elementului hărţii web sau un snippet. Configuraţi aplicaţia pentru a adăuga un snippet particularizat pentru panoul Despre."
   },
   "time": {
+    "playback": "Viteză de redare",
+    "play": "Redare",
+    "pause": "Pauză",
+    "timeSpeed": "Schimbare viteză",
     "enableTimeMessage": "Harta web specificată nu conţine straturi tematice cu variaţie temporală. Vizualizaţi secţiunea de ajutor ${link} pentru detalii. Pentru a utiliza şablonul fără să afişaţi timpul, utilizaţi panoul de configurare pentru a dezactiva opţiunea pentru timp.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

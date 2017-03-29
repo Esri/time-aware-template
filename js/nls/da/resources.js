@@ -29,6 +29,10 @@ define({
     "error": "Som standard anvendes webkortbeskrivelsen eller snippet. Konfigurér app'en for at tilføje en brugertilpasset snippet til panelet Om."
   },
   "time": {
+    "playback": "Afspilningshastighed",
+    "play": "Afspil",
+    "pause": "Pause",
+    "timeSpeed": "Skift hastighed",
     "enableTimeMessage": "Det angivne webkort indeholder ingen tidsafhængige lag. Se hjælp-emnet ${link} for yderligere oplysninger. For at bruge skabelonen uden at vise tid skal tidsindstillingen deaktiveres i konfigurationspanelet.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

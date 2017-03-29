@@ -29,6 +29,10 @@ define({
     "error": "Par défaut, la description de la carte Web ou l'extrait est utilisé. Configurez l'application afin d'ajouter un extrait personnalisé pour le volet A propos."
   },
   "time": {
+    "playback": "Vitesse de lecture",
+    "play": "Lecture",
+    "pause": "Pause",
+    "timeSpeed": "Changer la vitesse",
     "enableTimeMessage": "La carte Web spécifiée ne contient aucune couche temporelle. Reportez-vous à la rubrique d'aide ${link} pour en savoir plus. Pour utiliser le modèle sans afficher les données temporelles, utilisez le panneau de configuration afin de désactiver l'option temporelle.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

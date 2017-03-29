@@ -19,7 +19,7 @@ define({
   //Default configuration settings for the application. This is where you'll define things like a bing maps key,
   //default web map, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
   "appid": "",
-  "webmap": "99af95d49bda4efd891cbbbbb067ee6f",
+  "webmap": "cb62cd213b9d4755b7e91b34dfb51cf7",
   "oauthappid": null, //"AFTKRmv16wj14N3z",
   //Group templates must support a group url parameter. This will contain the id of the group.
   "group": "",
@@ -41,12 +41,13 @@ define({
   // Show date for specified time period. Time period starts from now and goes back the specified amount. So if you specify 2 days the
   // time slider will show the current time as the end time and 2 days ago as the start. Note only valid if your dataset has
   // data for the specified dates.
+  "futureDuration": false, // When true teh start time is now and the duration is in the future 
   "durationTime": null, // Number of duration period(s) to show (1, 2, 3, )
   "durationPeriod": null, // weeks, days, months, hours etc
   "humanizeDuration": false, // When true duration is displayed in human terms like an hour ago
   "tickTime": null, // Number of tick period(s) to show (1, 2, 3 etc)
   "tickPeriod": null, //"esriTimeUnitsDays", // break ticks into x days, years, weeks, hours, minutes
-  "thumbMovingRate": null, // set a custom thumb speed (milliseconds)
+  "thumbMovingRate": 1500, // set a custom thumb speed (milliseconds)
   "sliderticks": false, //display slider tics
   "looptime": false, //loop through time
   "autoplay": false, //auto play the slider when app starts
@@ -56,6 +57,7 @@ define({
   //position time container. Valid values are  bottom-right,
   //bottom-left, bottom-center.
   "timeposition": "bottom-center",
+  "timespeed": false, // True to display button that allows app users to speed up and slow down time animation
   "legendposition": null, //valid values are top-right and top-left
   "panelbackground": "#575757", //panel and title bar background color as hex value
   "panelcolor": "#FFF", //text color as hex value

@@ -29,6 +29,10 @@ define({
     "error": "預設情況下，將使用 web 地圖描述或代碼片段。配置應用程式來為關於面板新增自訂代碼片段。"
   },
   "time": {
+    "playback": "播放速度",
+    "play": "播放",
+    "pause": "暫停",
+    "timeSpeed": "變更速度",
     "enableTimeMessage": "指定的網上地圖不包含任何已啟用時間的圖層。有關詳細資訊，請參閱 ${link} 說明主題。要使用範本而不顯示時間，請使用設定面板來停用時間選項。",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

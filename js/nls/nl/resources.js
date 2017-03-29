@@ -29,6 +29,10 @@ define({
     "error": "Standaard wordt de webmapbeschrijving of snippet gebruikt. Configureer de app om een aangepaste snippet toe te voegen voor het deelvenster Over."
   },
   "time": {
+    "playback": "Playback speed",
+    "play": "Afspelen",
+    "pause": "Pauzeren",
+    "timeSpeed": "Snelheid wijzigen",
     "enableTimeMessage": "De gespecificeerde webmap bevat geen lagen met tijdondersteuning. Zie het hulponderwerp ${link} configureren voor details. Gebruik om de template te gebruiken zonder de tijd weer te geven het configuratiepaneel om de tijdoptie uit te schakelen.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },

@@ -29,6 +29,10 @@ define({
     "error": "Vaikimisi kasutatakse veebikaardi kirjeldust või mingit osa sellest. Kohandage rakendust, lisades vastava tekstilõigu juhtpaneeli kohta."
   },
   "time": {
+    "playback": "Esituse kiirus",
+    "play": "Esita",
+    "pause": "Peata",
+    "timeSpeed": "Muuda kiirust",
     "enableTimeMessage": "Määratud veebikaart ei sisalda ajateadlikke kihte. Täpsema teabe saamiseks vaadake ${link} teemat „Abi“. Keelake konfigureerimispaanil ajasuvand, et kasutada malli ilma aega kuvamata.",
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
