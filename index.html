@@ -14,8 +14,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name = "viewport" content = "initial-scale = 1.0">
   <!-- End Responsive -->
-  <link rel="stylesheet" href="//js.arcgis.com/3.18/esri/themes/calcite/dijit/calcite.css">
-  <link rel="stylesheet" href="//js.arcgis.com/3.18/esri/css/esri.css">
+  <link rel="stylesheet" href="//jsdev.arcgis.com/3.19/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="//jsdev.arcgis.com/3.19/esri/css/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/dialogs.css">
@@ -48,7 +48,6 @@
               </div>
           </div>
         </div>
-
         </div>
       </div>
     </div>
@@ -56,23 +55,26 @@
     <div id="legendContainer" class="bg fg">
       <div id="legendDiv"></div>
     </div>
+
      <div id="timeContainer" class="timeInfo bg fg">
-      <div id="timeControls" class="controlCont">
-        <div id="playControls">
+      <div id="timeControls" class="controlCont wrapper">
+        <div class="main">
+        <div id="playControls" class="box">
           <div id="prevSlider" class="hide icon-previous tc timenav"></div>
           <div id="playSlider" class="icon-play tc"></div>
           <div id="nextSlider" class="hide icon-next tc timenav"></div>
         </div>
-
-        <div id="timeLabel" ></div>
+        <div id="timeLabel" class="box" ></div>
       </div>
-      <div id="sliderContainer">
-        <div id="timeSliderDiv" class="tc"></div>
+        <div id="sliderContainer" class="footer">
+          <div id="timeSliderDiv" class="tc"></div>
+        </div>
       </div>
-
-
     </div>
+
+
   </div>
+
   <script type="text/javascript">
     var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
     var dojoConfig = {
@@ -97,7 +99,7 @@
   </script>
   <script type="text/javascript" src="js/moment.min.js"></script>
   <script type="text/javascript" src="js/twix.min.js"></script>
-  <script type="text/javascript" src="//js.arcgis.com/3.18"></script>
+  <script type="text/javascript" src="//jsdev.arcgis.com/3.19"></script>
   <script type="text/javascript">
     require([
             "config/templateConfig",

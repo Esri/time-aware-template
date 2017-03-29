@@ -1,0 +1,37 @@
+#timeControls{
+  width: 100%;
+}
+.wrapper{
+  height: 100%;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.main{
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+.box{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#playSlider, #prevSlider, #nextSlider{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.sidebar {
+  width: 100px;
+}
+.footer {
+  display: table-row;
+  height: 1px;
+}
+#timeLabel{
+  margin:.5em auto;
+}
+.calcite .dijitSliderBarH, .calcite .dijitSliderBumperH {
+    border-radius: 5px;
+}

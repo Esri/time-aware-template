@@ -41,6 +41,7 @@ web khác hoặc tắt tùy chọn biểu đồ."
     }
   }),
   "ar": 1,
+  "bs": 1,
   "cs": 1,
   "da": 1,
   "de": 1,
@@ -51,6 +52,7 @@ web khác hoặc tắt tùy chọn biểu đồ."
   "fr": 1,
   "he": 1,
   "hr": 1, 
+  "id": 1,
   "it": 1,
   "ja": 1,
   "ko": 1,

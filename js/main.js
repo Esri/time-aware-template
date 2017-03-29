@@ -60,6 +60,13 @@ define([
       if (config) {
 
         this.config = config;
+        var customTheme = document.createElement("link");
+        customTheme.setAttribute("rel", "stylesheet");
+        customTheme.setAttribute("type", "text/css");
+        customTheme.setAttribute("href", "css/theme/" + this.config.customLayout + ".css");
+        document.head.appendChild(customTheme);
+
+
         // Create and add custom style sheet
         if (this.config.customstyle) {
           var style = document.createElement("style");
@@ -332,10 +339,19 @@ define([
     },
     _updateTheme: function() {
       if (this.config.panelbackground) {
-        query(".bg").style("backgroundColor", this.config.panelbackground.toString());
+        var bgColor = this.config.panelbackground.toString();
+        query(".bg").style("backgroundColor", bgColor);
+        query(".esriPopup .pointer").style("backgroundColor", bgColor);
+        query(".esriPopup .titlePane").style("backgroundColor", bgColor);
+
       }
       if (this.config.panelcolor) {
-        query(".fg").style("color", this.config.panelcolor.toString());
+        var textColor = this.config.panelcolor.toString();
+        query(".fg").style("color", textColor);
+        //Set the font color using the configured color value
+        query(".esriPopup .titlePane").style("color", textColor);
+        query(".esriPopup .titleButton").style("color", textColor);
+
       }
 
       if (this.config.timecolor) {

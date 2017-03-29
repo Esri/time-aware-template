@@ -251,9 +251,7 @@ body,html {
 #timeSlider > table > tbody > tr > td:nth-child(4){
   display:none;
 }
-#sliderContainer {
-  padding: .5em .5em 1em .5em;
-}
+
 /*Hide the time slider ticks if configured to do so*/
 .esriTimeSlider.noTicks .tsTicks {
     display: none;
@@ -278,20 +276,11 @@ body,html {
 }
 /*Date-Time label*/
 #timeControls {
-  display:table;
-  width: 100%;
   overflow: hidden;
   border-bottom: none;
   border-color: inherit;
 }
-#timeLabel {
-  text-align: center;
-  display:table;
-  white-space: normal;
-  max-height:40px;
-  line-height: normal;
-  margin: .5em auto;
-}
+
 #timeLabel.error {
     text-align: left;
 }
@@ -302,8 +291,6 @@ body,html {
 
 /*Time Slider Controls*/
 .controlCont {
-    display: table-cell;
-    width: 100%;
     overflow: hidden;
     max-height:40px;
     padding: .5em;
@@ -319,10 +306,8 @@ body,html {
 }
 /*Play/Pause Button*/
 #playControls {
-    display: table-cell;
     width: 40px;
-    vertical-align: middle;
-    border-right: none; 
+    border-right: none;
     border-color: inherit;
     text-shadow: 0px 1px 2px rgba(128,128,128,.5);
 }
@@ -343,7 +328,6 @@ body,html {
     display: none;
 }
 #playSlider, #prevSlider, #nextSlider {
-    display: table-cell;
     vertical-align: middle;
     text-align: center;
 }

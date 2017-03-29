@@ -122,6 +122,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
             var mapLayer = this.map.getLayer(layer.id);
             if (mapLayer && (mapLayer.type === "Feature Layer" || mapLayer.type === "FeatureLayer")) {
               source.featureLayer = mapLayer;
+              if (mapLayer.infoTemplate) {
+                source.infoTemplate = mapLayer.infoTemplate;
+              }
             } else {
               source.featureLayer = new FeatureLayer(url, {
                 outFields: ["*"]
@@ -132,6 +135,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
             source.searchFields = [searchLayer.field.name];
             source.displayField = searchLayer.field.name;
             source.outFields = ["*"];
+
             source.placeholder = searchOptions.hintText;
             this.sources.push(source);
           }
@@ -146,11 +150,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
           source.locator = new Locator(source.url);
         } else { //feature layer
           var featureLayer = null;
-          if (source.flayerId && source.url) {
-            featureLayer = new FeatureLayer(source.url, {
-              outFields: ["*"]
-            });
-          } else if (source.flayerId) {
+          if (source.flayerId) {
             featureLayer = this.map.getLayer(source.flayerId);
           }
           if (!featureLayer && source.url) {
@@ -165,6 +165,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
             }
           }
           source.featureLayer = featureLayer;
+          source.infoTemplate = source.featureLayer.infoTemplate;
         }
         if (source.searchWithinMap) {
           source.searchExtent = this.map.extent;
