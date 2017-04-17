@@ -3,8 +3,6 @@ time-aware-template
 
 Time Aware is a configurable application template that enables you to display time enabled layers in an ArcGIS web map using a time slider.
 
-![Screen Shot](https://dl.dropboxusercontent.com/u/24627279/screenshots/time.png)
-
 [View it live](http://www.arcgis.com/apps/Time/index.html?webmap=8a63712c19a8410082f3dc106118b7d1)
 #July 2015 Release Updates
 Template was re-worked at this release to have a simpler UI and be more configurable. You can now specify a color scheme, change time options and more. 
@@ -68,5 +66,3 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 A copy of the license is available in the repository's license.txt file.
-[](Esri Tags: ArcGIS Online Web Application Templates) 
-[](Esri Language: JavaScript)
