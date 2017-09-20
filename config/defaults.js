@@ -35,6 +35,7 @@ define({
   "time": true,
   "showStartDate": true, // switch to 2 lines by default ?? or refresh div
   "showEndDate": true,
+  "disableNav": false,
   "dateSeparator": "-", // TODO no sep option
   "singleLineDate": true, // when true start/end dates on single line
   "customFormatOption": null, // "dddd, MMMM Do YYYY, h:mm:ss a"
