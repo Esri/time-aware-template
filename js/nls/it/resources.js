@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Impossibile creare la mappa"
+    "error": "Impossibile creare la mappa",
+    "licenseError": {
+      "message": "L’account non dispone della licenza per l’uso di app configurabili non pubbliche. È necessario richiedere all’amministratore dell'organizzazione l’assegnazione di un tipo di utente che includa le app essenziali o una licenza aggiuntiva per le app essenziali.",
+      "title": "Non Licenziato"
+    }
   },
   "legend": {
     "title": "Legenda"
@@ -29,6 +33,7 @@ define({
     "error": "Per impostazione predefinita, verrà utilizzato un frammento o la descrizione della mappa Web. Configurare l'app per aggiungere un frammento personalizzato per il pannello Informazioni."
   },
   "time": {
+    "refresh": "Aggiorna",
     "playback": "Velocità di riproduzione",
     "play": "Esegui",
     "pause": "Pausa",

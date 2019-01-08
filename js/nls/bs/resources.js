@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Nije moguće stvoriti kartu"
+    "error": "Nije moguće stvoriti kartu",
+    "licenseError": {
+      "message": "Vaš račun nije licenciran za upotrebu konfigurabilnih appova koji nisu javni. Obratite se administratoru svoje organizacije da vam dodijeli vrstu korisnika koja sadrži licencu za osnovne appove ili za dodatke za osnovne appove.",
+      "title": "Nema licence"
+    }
   },
   "legend": {
     "title": "Legenda"
@@ -29,6 +33,7 @@ define({
     "error": "Prema zadanim postavkama upotrijebit će se opis web-karte ili isječak. Konfigurirajte app za dodavanje prilagođenog isječka za ploču s informacijama."
   },
   "time": {
+    "refresh": "Osvježi",
     "playback": "Brzina reprodukcije",
     "play": "Reproduciraj",
     "pause": "Pauza",

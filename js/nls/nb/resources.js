@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Kan ikke opprette kart"
+    "error": "Kan ikke opprette kart",
+    "licenseError": {
+      "message": "Kontoen din er ikke lisensiert til å bruke konfigurerbare apper som ikke er offentlige. Be administratoren for organisasjonen om å tilordne deg en brukertype som omfatter Essential Apps eller en tilleggslisens for Essential Apps.",
+      "title": "Ikke lisensiert"
+    }
   },
   "legend": {
     "title": "Tegnforklaring"
@@ -29,6 +33,7 @@ define({
     "error": "Som standard brukes webkartbeskrivelsen eller snutten. Konfigurer appen slik at det legges til en egendefinert snutt om panelet."
   },
   "time": {
+    "refresh": "Oppdater",
     "playback": "Avspillingshastighet",
     "play": "Spill av",
     "pause": "Pause",

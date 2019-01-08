@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Kaart kan niet gemaakt worden"
+    "error": "Kaart kan niet gemaakt worden",
+    "licenseError": {
+      "message": "Uw account heeft geen licentie om configureerbare apps te gebruiken die niet openbaar zijn. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen dat Essential Apps of een add-on Essential Apps-licentie bevat.",
+      "title": "Geen licentie"
+    }
   },
   "legend": {
     "title": "Legenda"
@@ -29,6 +33,7 @@ define({
     "error": "Standaard wordt de webmapbeschrijving of snippet gebruikt. Configureer de app om een aangepaste snippet toe te voegen voor het deelvenster Over."
   },
   "time": {
+    "refresh": "Vernieuwen",
     "playback": "Playback speed",
     "play": "Afspelen",
     "pause": "Pauzeren",

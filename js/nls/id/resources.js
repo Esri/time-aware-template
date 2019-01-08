@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Tidak dapat membuat peta"
+    "error": "Tidak dapat membuat peta",
+    "licenseError": {
+      "message": "Akun Anda tidak dilisensikan untuk menggunakan Aplikasi yang Dapat Dikonfigurasi yang bukan bersifat publik. Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna yang menyertakan lisensi Essential App atau add-on Essential App.",
+      "title": "Tidak Dilisensikan"
+    }
   },
   "legend": {
     "title": "Legenda"
@@ -29,6 +33,7 @@ define({
     "error": "Secara default, deskripsi atau potongan kecil dari web map yang akan digunakan. Konfigurasikan aplikasi untuk menampilkan potongan kecil tersebut dalam panel 'tentang'."
   },
   "time": {
+    "refresh": "Muat Ulang",
     "playback": "Kecepatan putar ulang",
     "play": "Putar",
     "pause": "Jeda",

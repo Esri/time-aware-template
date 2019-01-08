@@ -17,6 +17,15 @@
   vertical-align: middle;
   text-align: center;
 }
+
+#timeLabel > a{
+  color:#fff;
+}
+.box.error-text{
+  padding:1em;
+  font-size: 15px;
+  text-align: left;
+}
 #playSlider, #prevSlider, #nextSlider{
   display: table-cell;
   vertical-align: middle;

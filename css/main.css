@@ -65,7 +65,6 @@ html {
     -webkit-animation-timing-function: linear;
 }
 
-
 /*Map Navigation Widgets (zoom slider, search, home)*/
 
 #logo {
@@ -156,7 +155,6 @@ html {
     top: 20px;
 }
 
-
 /*App color themes*/
 
 .bg {
@@ -167,7 +165,6 @@ html {
 .fg {
     color: #333;
 }
-
 
 /*Top Bar (title, share, about)*/
 
@@ -191,7 +188,6 @@ html {
     float: left;
     padding-left: .5em;
 }
-
 
 /*Styles for the right menu container that holds share and about*/
 
@@ -251,7 +247,6 @@ html {
         display: none;
     }
 }
-
 
 /*Window Positioning (top, left, bottom, right,center)*/
 
@@ -318,13 +313,11 @@ html {
     text-align: center;
 }
 
-
 /*Time Slider Container*/
 
 #timeContainer {
     width: 400px;
 }
-
 
 /*Hide the time slider prev/next buttons*/
 
@@ -344,7 +337,6 @@ th {
 #timeSlider>table>tbody>tr>td:nth-child(4) {
     display: none;
 }
-
 
 /*Hide the time slider ticks if configured to do so*/
 
@@ -374,7 +366,6 @@ th {
     line-height: normal;
 }
 
-
 /*Date-Time label*/
 
 #timeControls {
@@ -391,7 +382,6 @@ th {
     color: #007AC2;
     text-decoration: none;
 }
-
 
 /*Time Slider Controls*/
 
@@ -411,7 +401,6 @@ th {
 .noslider #timeControls {
     border-bottom: none;
 }
-
 
 /*Play/Pause Button*/
 
@@ -456,7 +445,6 @@ th {
     vertical-align: middle;
     text-align: center;
 }
-
 
 /*Legend Customizations*/
 
@@ -521,7 +509,6 @@ th {
     padding-right: 12px;
 }
 
-
 /*Hide-Show legend*/
 
 .legendButtonDiv {
@@ -530,7 +517,6 @@ th {
     padding: 4px;
     z-index: 31;
 }
-
 
 /*Icon Font Styles (Play/Pause/Open/Close)*/
 
@@ -637,7 +623,6 @@ th {
     content: "\e60b";
 }
 
-
 /*Small screen modifications*/
 
 @media only screen and (max-width:600px) {
@@ -723,7 +708,6 @@ th {
     }
 }
 
-
 /*Loading Indicator Customizations*/
 
 .loading-indicator {
@@ -761,7 +745,6 @@ th {
     left: 0;
     text-align: center;
 }
-
 
 /*Share Dialog Styles*/
 
@@ -856,25 +839,12 @@ th {
     padding: 8px;
 }
 
-input[type=checkbox].share-dialog-checkbox {
-    display: none;
-}
-
-.share-dialog-checkbox:before {
-    content: "";
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    background-color: #FDFDFD;
-    color: #f3f3f3;
-    text-align: center;
-}
-
-input[type=checkbox]:checked.share-dialog-checkbox+.share-dialog-checkbox:before {
-    content: "\2713";
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 15px;
+.refresh-button {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .time-speed-container.hide {
@@ -911,4 +881,8 @@ input[type=checkbox]:checked.share-dialog-checkbox+.share-dialog-checkbox:before
 #rateButton>span.dijitReset.dijitInline.dijitArrowButtonInner {
     margin: 0;
     padding: 0 2px;
+}
+
+.box a {
+    color: #fff;
 }

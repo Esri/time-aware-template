@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Kreiranje mape nije moguće"
+    "error": "Kreiranje mape nije moguće",
+    "licenseError": {
+      "message": "Vaš nalog nema licencu za korišćenje aplikacija koje mogu da se konfigurišu i nisu javne. Zatražite od administratora organizacije da vam dodeli onaj tip korisnika koji uključuje osnovne aplikacije ili licencu za dodatne osnovne aplikacije.",
+      "title": "Nema licencu"
+    }
   },
   "legend": {
     "title": "Legenda"
@@ -29,6 +33,7 @@ define({
     "error": "Podrazumevano, biće korišćen opis ili isečak veb mape. Konfigurišite aplikaciju da biste dodali prilagođeni isečak za tablu „više informacija“."
   },
   "time": {
+    "refresh": "Osveži",
     "playback": "Brzina reprodukovanja",
     "play": "Reprodukuj",
     "pause": "Pauziraj",

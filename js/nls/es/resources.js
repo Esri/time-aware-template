@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "No se puede crear el mapa"
+    "error": "No se puede crear el mapa",
+    "licenseError": {
+      "message": "Su cuenta no tiene licencia para utilizar aplicaciones configurables que no son públicas. Pídale al administrador de su organización que le asigne un tipo de usuario que incluya aplicaciones esenciales o una licencia complementaria de aplicaciones esenciales.",
+      "title": "Sin licencia"
+    }
   },
   "legend": {
     "title": "Leyenda"
@@ -29,6 +33,7 @@ define({
     "error": "De forma predeterminada, se utilizará la descripción o fragmento del mapa web. Configura la aplicación para agregar un fragmento personalizado para el panel Acerca de."
   },
   "time": {
+    "refresh": "Actualizar",
     "playback": "Velocidad de reproducción",
     "play": "Reproducir",
     "pause": "Pausa",

@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Impossible de créer la carte"
+    "error": "Impossible de créer la carte",
+    "licenseError": {
+      "message": "La licence de votre compte ne permet pas d’utiliser des applications configurables non publiques. Demandez à l’administrateur de votre organisation de vous attribuer un type d’utilisateur qui inclut une licence Essential Apps ou une licence Essential Apps additionnelle.",
+      "title": "Pas de licence"
+    }
   },
   "legend": {
     "title": "Légende"
@@ -29,6 +33,7 @@ define({
     "error": "Par défaut, la description de la carte Web ou l'extrait est utilisé. Configurez l'application afin d'ajouter un extrait personnalisé pour le volet A propos."
   },
   "time": {
+    "refresh": "Actualiser",
     "playback": "Vitesse de lecture",
     "play": "Lecture",
     "pause": "Pause",

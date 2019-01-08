@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Imposibil de creat harta"
+    "error": "Imposibil de creat harta",
+    "licenseError": {
+      "message": "Contul dvs. nu este licențiat să utilizeze aplicații configurabile care nu sunt publice. Solicitați-i administratorului organizației să vă aloce un tip de utilizator care include aplicații esențiale sau o licență pentru aplicații esențiale de completare.",
+      "title": "Nelicențiat"
+    }
   },
   "legend": {
     "title": "Legendă"
@@ -29,6 +33,7 @@ define({
     "error": "În mod implicit, este utilizată descrierea elementului hărţii web sau un snippet. Configuraţi aplicaţia pentru a adăuga un snippet particularizat pentru panoul Despre."
   },
   "time": {
+    "refresh": "Reîmprospătare",
     "playback": "Viteză de redare",
     "play": "Redare",
     "pause": "Pauză",

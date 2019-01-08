@@ -132,10 +132,10 @@
                 "fieldName": "zoomslider",
                 "label": "Zoom controls"
             }, {
-                "type":"boolean",
+                "type": "boolean",
                 "fieldName": "disableNav",
                 "label": "Disable all map navgation"
-            },{
+            }, {
                 "type": "boolean",
                 "fieldName": "scale",
                 "label": "Scalebar"
@@ -266,7 +266,7 @@
                 }]
             }, {
                 "type": "paragraph",
-                "value": "If the above options don't provide enough control over the date time you can specify a custom one. See the  <a href='http://momentjs.com/docs/#/displaying/format/'>format help</a> for more information."
+                "value": "If the above options don't provide enough control over the date time you can specify a custom one. See the  <a href='http://momentjs.com/docs/#/displaying/format/' target='_blank'>format help</a> for more information."
             }, {
                 "type": "string",
                 "label": "Custom Date Format",
@@ -373,6 +373,10 @@
                             "value": "esriTimeUnitsYears"
                         }
                     ]
+                }, {
+                    "type": "boolean",
+                    "fieldName": "refreshTime",
+                    "label": "Add a refresh button to update displayed time period"
                 },
                 {
                     "type": "paragraph",
@@ -423,6 +427,7 @@
         "share": true,
         "about": true,
         "legend": true,
+        "refreshTime": false,
         "legendposition": "top-right",
         "search": true,
         "timeposition": "bottom-center",

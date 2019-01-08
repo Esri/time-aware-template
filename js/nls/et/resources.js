@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Võimetu koostama kaarti"
+    "error": "Võimetu koostama kaarti",
+    "licenseError": {
+      "message": "Teie kontol puudub litsents konfigureeritavate rakenduste kasutamiseks, mis ei ole avalikud. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab olulisi rakendusi või oluliste rakenduse lisalitsentsi.",
+      "title": "Litsents puudub"
+    }
   },
   "legend": {
     "title": "Legendiga kaart"
@@ -29,6 +33,7 @@ define({
     "error": "Vaikimisi kasutatakse veebikaardi kirjeldust või mingit osa sellest. Kohandage rakendust, lisades vastava tekstilõigu juhtpaneeli kohta."
   },
   "time": {
+    "refresh": "Värskenda",
     "playback": "Esituse kiirus",
     "play": "Esita",
     "pause": "Peata",

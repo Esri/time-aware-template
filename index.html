@@ -4,7 +4,6 @@
 <head>
   <title></title>
   <meta charset="utf-8">
-  <meta name="fragment" content="!">
   <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="mobile-web-app-capable" content="yes">
@@ -12,8 +11,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="viewport" content="initial-scale = 1.0">
   <!-- End Responsive -->
-  <link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/themes/calcite/dijit/calcite.css">
-  <link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/themes/calcite/esri/esri.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/esri/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/dialogs.css">
@@ -63,11 +62,11 @@
             <button id="nextSlider" class="hide esri-icon-forward tc timenav"></button>
           </div>
           <div id="timeLabel" class="box"></div>
+          <div id="refresh" class="box"></div>
         </div>
         <div id="sliderContainer" class="footer">
           <div id="timeSliderDiv" class="tc"></div>
         </div>
-        <!-- <div class="time-speed-container"> <button id="timeSpeed" class="time-speed tc hide"><span class="speed-label" id="speedText"></span></button></div>-->
         <div id="timeSpeedContainer" class="time-speed-container hide tc">
         </div>
 
@@ -78,8 +77,12 @@
   </div>
 
   <script type="text/javascript">
+    var webgl = location.search.match(/webgl=([\w-]+)/) ? (RegExp.$1).toLowerCase() === "false" ? 0 : 1 : 1;
     var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
     var dojoConfig = {
+      has: {
+        "esri-featurelayer-webgl": webgl
+      },
       async: true,
       // The locationPath logic below may look confusing but all its doing is
       // enabling us to load the api from a CDN and load local modules from the correct location.
@@ -98,10 +101,11 @@
     if (location.search.match(/locale=([\w\-]+)/)) {
       dojoConfig.locale = RegExp.$1;
     }
+
   </script>
   <script type="text/javascript" src="js/moment.min.js"></script>
   <script type="text/javascript" src="js/twix.min.js"></script>
-  <script type="text/javascript" src="https://js.arcgis.com/3.22"></script>
+  <script type="text/javascript" src="https://js.arcgis.com/3.27"></script>
   <script type="text/javascript">
     require([
       "dojo/parser",
@@ -130,6 +134,7 @@
         myApp.reportError(error);
       });
     });
+
   </script>
 </body>
 

@@ -16,7 +16,11 @@
  */
 define({
   "map": {
-    "error": "Karte kann nicht erstellt werden"
+    "error": "Karte kann nicht erstellt werden",
+    "licenseError": {
+      "message": "Ihr Konto ist nicht für die Verwendung von nicht öffentlichen konfigurierbaren Apps lizenziert. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Essential Apps oder eine Add-On-Lizenz für Essential Apps zuzuweisen.",
+      "title": "Nicht lizenziert"
+    }
   },
   "legend": {
     "title": "Legende"
@@ -29,6 +33,7 @@ define({
     "error": "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
   },
   "time": {
+    "refresh": "Aktualisieren",
     "playback": "Wiedergabegeschwindigkeit",
     "play": "Wiedergeben",
     "pause": "Unterbrechen",

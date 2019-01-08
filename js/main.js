@@ -20,17 +20,12 @@ define([
   "dojo/_base/lang",
   "dojo/_base/kernel",
   "dojo/query!css3",
-  "dijit/registry",
   "dojo/on",
   "dojo/string",
-  "dojo/date/locale",
   "dojo/dom-construct",
   "dojo/dom-attr",
   "dojo/dom-style",
-  "dojo/_base/array",
   "esri/arcgis/utils",
-  "esri/lang",
-  "esri/layers/FeatureLayer",
   "esri/TimeExtent",
   "esri/dijit/TimeSlider",
   "application/MapUrlParams",
@@ -39,19 +34,16 @@ define([
   "dojo/domReady!"
 ], function (
   declare, lang, kernel, query,
-  registry,
   on,
   string,
-  locale,
   domConstruct, domAttr, domStyle,
-  array,
-  arcgisUtils, esriLang,
-  FeatureLayer,
+  arcgisUtils,
   TimeExtent, TimeSlider,
   MapUrlParams,
   dom, domClass) {
   return declare(null, {
     config: {},
+    thumbIndexes: null,
     startup: function (config) {
       // Set lang attribute to current locale
       document.documentElement.lang = kernel.locale;
@@ -59,10 +51,7 @@ define([
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
-
         this.config = config;
-
-
         // Apply custom theme css
         var customTheme = document.createElement("link");
         customTheme.setAttribute("rel", "stylesheet");
@@ -390,9 +379,9 @@ define([
         }
       }
 
-
       // Overwrite time extent with custom time if specified
       this.config.humanize = false;
+
       if (this.config.durationTime && this.config.durationPeriod && this.config.tickTime && this.config.tickPeriod) {
         var customEnd, customStart;
         if (this.config.futureDuration) {
@@ -406,8 +395,13 @@ define([
         timeExtent = new TimeExtent(new Date(customStart), new Date(customEnd));
         timeProperties.startTime = customStart;
         timeProperties.endTime = customEnd;
-        timeProperties.timeStopInterval.interval = this.config.tickTime;
-        timeProperties.timeStopInterval.units = this.config.tickPeriod;
+        if (this.config.tickTime && this.config.tickPeriod) {
+          timeProperties.timeStopInterval = {
+            interval: this.config.tickTime,
+            units: this.config.tickPeriod
+          };
+        }
+
         if (this.config.humanizeDuration) {
           this.config.humanize = true;
         }
@@ -433,21 +427,20 @@ define([
               style: "display:none;"
             });
 
-            var rateButton = new DropDownButton({
+            this.rateButton = new DropDownButton({
               label: "1x",
               dropDown: rateMenu,
-              id: "rateButton",
               title: this.config.i18n.time.playback,
               className: "time-speed"
-            }, domConstruct.create("div", {}, speedContainer)).startup();
-
+            }, domConstruct.create("div", {}, speedContainer));
+            this.rateButton.startup();
 
             rates.forEach(lang.hitch(this, function (rate, i) {
               var item = new MenuItem({
                 label: rate.toString(),
                 onClick: lang.hitch(this, function (e) {
                   timeSlider.setThumbMovingRate(this.config.thumbMovingRate / rate);
-                  dom.byId("rateButton_label").innerHTML = rate + "x";
+                  dom.byId(this.rateButton.id + "_label").innerHTML = rate + "x";
                 })
               });
               rateMenu.addChild(item);
@@ -455,10 +448,36 @@ define([
 
           }));
         }
+        if (this.config.refreshTime) {
+          // add button to update time extent to current time 
+          // and refresh layer 
+          //  var speedContainer = dom.byId("timeSpeedContainer");
+          // domClass.remove(speedContainer, "hide");
+
+          var refreshBtn = domConstruct.create("button", {
+            className: "refresh-button button-container esri-icon-refresh",
+            title: this.config.i18n.time.refresh
+          }, "refresh");
+
+          refreshBtn.addEventListener("click", lang.hitch(this, function () {
+            // destroy and recreate the slider to refresh the time 
+            this.thumbIndexes = timeSlider.thumbIndexes;
+            domConstruct.empty("refresh");
+            domConstruct.empty("timeSpeedContainer")
+            timeSlider.destroy();
+            timeSlider = null;
+            domConstruct.destroy("timeSliderDiv");
+            domConstruct.create("div", {
+              id: "timeSliderDiv",
+              className: "tc"
+            }, "sliderContainer");
+            this._displayTime();
+          }));
+        }
 
         this.map.setTimeExtent(timeExtent);
-        this.map.setTimeSlider(timeSlider);
 
+        this.map.setTimeSlider(timeSlider);
         if (timeProperties.numberOfStops) {
           timeSlider.createTimeStopsByCount(timeExtent, timeProperties.numberOfStops);
         } else {
@@ -491,6 +510,9 @@ define([
           if (startPos) {
             timeSlider.setThumbIndexes([startPos, endPos]);
           }
+        }
+        if (this.thumbIndexes) {
+          timeSlider.setThumbIndexes(this.thumbIndexes);
         }
         timeSlider.startup();
 
@@ -583,7 +605,6 @@ define([
         } else {
           domClass.add("playControls", "nonav");
         }
-
         if (!this.config.sliderticks) {
           domClass.add(timeSlider.domNode, "noTicks");
         }
@@ -595,10 +616,12 @@ define([
         domClass.add(dom.byId("playControls"), "hide");
         domClass.add("timeContainer", "window-bottom-center");
         var timeMessage = string.substitute(this.config.i18n.time.enableTimeMessage, {
-          "link": "<a target='_blank' href='" + this.config.i18n.time.enableTimeMessageLink + "'>" + this.config.i18n.time.enableTimeMessageLink + "</a>"
+          "link": "<a target='_blank' href='" + this.config.i18n.time.enableTimeMessageLink + "'> help topic </a>"
         });
-        dom.byId("timeLabel").innerHTML = timeMessage;
-        domClass.add(dom.byId("timeSliderDiv"), "error-text");
+        console.log("Message")
+        var errorBox = document.getElementById("timeLabel");
+        errorBox.innerHTML = timeMessage;
+        errorBox.classList.add("error-text");
       }
       this._updateTheme();
     },

@@ -42,7 +42,7 @@ define({
   // Show date for specified time period. Time period starts from now and goes back the specified amount. So if you specify 2 days the
   // time slider will show the current time as the end time and 2 days ago as the start. Note only valid if your dataset has
   // data for the specified dates.
-  "futureDuration": false, // When true teh start time is now and the duration is in the future 
+  "futureDuration": false, // When true the start time is now and the duration is in the future
   "durationTime": null, // Number of duration period(s) to show (1, 2, 3, )
   "durationPeriod": null, // weeks, days, months, hours etc
   "humanizeDuration": false, // When true duration is displayed in human terms like an hour ago
@@ -51,6 +51,7 @@ define({
   "thumbMovingRate": 1500, // set a custom thumb speed (milliseconds)
   "sliderticks": false, //display slider tics
   "looptime": false, //loop through time
+  "refreshTime": false, // Set to true when using Live Data to add a refresh button that will update the time period
   "autoplay": false, //auto play the slider when app starts
   "noslider": false, //hide slider and play controls and just show time
   "intermediatechanges": true, // update map as the slider is moved. When false map doesn't update until slider thumb is dropped.
